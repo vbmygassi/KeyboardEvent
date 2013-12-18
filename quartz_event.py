@@ -254,22 +254,54 @@ def postSearchSCE():
 	e = CGEventCreateKeyboardEvent(None, 49, False);
 	CGEventPost(kCGHIDEventTap, e);
 
+def postGoToFolderSCE():
+	e = CGEventCreateKeyboardEvent(None, 5, True);
+	CGEventSetFlags(e, kCGEventFlagMaskShift|kCGEventFlagMaskCommand);
+	CGEventPost(kCGHIDEventTap, e);
+	e = CGEventCreateKeyboardEvent(None, 5, False);
+	CGEventPost(kCGHIDEventTap, e);
+	
 # stores mouse position	
 e = CGEventCreate(None);
 pos = CGEventGetLocation(e);
 
 # wild wild click
+postMMoved(0, 2000);
+postMClickDownE(0, 2000);
+postMClickUpE(0, 2000);
+
+# posts to to folder shortcut event
+postGoToFolderSCE();
+
+# easy 
+time.sleep(1);
+
+# types /Users/
+postKeyE(u'/');
+postKeyE(u'U');
+postKeyE(u's');
+postKeyE(u'e');
+postKeyE(u'r');
+postKeyE(u's');
+postKeyE(u'/');
+
+# enters [ENTER]
+postKeycodeE(52);
+
+'''
+postMMoved(10, 10);
 postMClickDownE(10, 10);
 postMDragggedE(20, 20);
 postMClickUpE(10, 10);
+'''
 
 # resets mouse position
 postMMoved(int(pos.x), int(pos.y));
 time.sleep(1);
 postMClickDownE(int(pos.x), int(pos.y));
-time.sleep(1);
 
 # opens spotlight
+'''
 postSearchSCE();
 
 # easy
@@ -289,4 +321,6 @@ time.sleep(3);
 
 # enters [ENTER]
 postKeycodeE(52);
+'''
+
 

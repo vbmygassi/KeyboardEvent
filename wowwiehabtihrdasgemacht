@@ -1,4 +1,5 @@
 -- http://www.jwz.org/blog/2013/12/scripting-itunes-11-up-next/#comments
+
 tell application "iTunes"
   set visible of browser window 1 to true
   activate
