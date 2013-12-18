@@ -48,6 +48,7 @@ def postSearchSCE():
 e = CGEventCreate(None);
 pos = CGEventGetLocation(e);
 
+# wild wild click
 postMClickDownE(10, 10);
 postMDragggedE(20, 20);
 postMClickUpE(10, 10);
@@ -60,14 +61,22 @@ time.sleep(1);
 
 # opens spotlight
 postSearchSCE();
+
 # easy
 time.sleep(1);
+
 # types
 postKeyE(u'ü');
-postKeyE(u'l');
-postKeyE(u'f');
-postKeyE(u'e');
-postKeyE(u'!');
 time.sleep(1);
+postKeyE(u'l');
+time.sleep(1);
+postKeyE(u'f');
+time.sleep(1);
+postKeyE(u'e');
+time.sleep(1);
+postKeyE(u'!');
+time.sleep(3);
+
 # enters
 postKeycodeE(52);
+
