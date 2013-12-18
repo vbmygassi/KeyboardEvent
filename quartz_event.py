@@ -267,26 +267,38 @@ pos = CGEventGetLocation(e);
 
 # wild wild click
 postMMoved(0, 2000);
+time.sleep(0.1);
 postMClickDownE(0, 2000);
+time.sleep(0.1);
 postMClickUpE(0, 2000);
+time.sleep(0.1);
 
-# posts to to folder shortcut event
+# posts go to folder shortcut event
 postGoToFolderSCE();
+time.sleep(0.1);
 
 # easy 
 time.sleep(1);
 
 # types /Users/
 postKeyE(u'/');
+time.sleep(0.1);
 postKeyE(u'U');
+time.sleep(0.1);
 postKeyE(u's');
+time.sleep(0.1);
 postKeyE(u'e');
+time.sleep(0.1);
 postKeyE(u'r');
+time.sleep(0.1);
 postKeyE(u's');
+time.sleep(0.1);
 postKeyE(u'/');
+time.sleep(0.1);
 
 # enters [ENTER]
 postKeycodeE(52);
+time.sleep(0.1);
 
 '''
 postMMoved(10, 10);
@@ -297,8 +309,7 @@ postMClickUpE(10, 10);
 
 # resets mouse position
 postMMoved(int(pos.x), int(pos.y));
-time.sleep(1);
-postMClickDownE(int(pos.x), int(pos.y));
+# postMClickDownE(int(pos.x), int(pos.y));
 
 # opens spotlight
 '''
