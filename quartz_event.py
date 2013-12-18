@@ -28,6 +28,20 @@ def postMMoved(x, y):
 def postKeyE(key):
 	e = CGEventCreateKeyboardEvent(None, 0, True);
 	CGEventKeyboardSetUnicodeString(e, len(key), map(ord, key));
+	# CGEventSetFlags(e, kCGEventFlagMaskShift);
+	CGEventPost(kCGHIDEventTap, e);
+
+def postKeycodeE(code):
+	e = CGEventCreateKeyboardEvent(None, code, True);	
+	CGEventPost(kCGHIDEventTap, e);
+	e = CGEventCreateKeyboardEvent(None, code, False);	
+	CGEventPost(kCGHIDEventTap, e);
+
+def postSearchSCE():
+	e = CGEventCreateKeyboardEvent(None, 49, True);
+	CGEventSetFlags(e, kCGEventFlagMaskCommand);
+	CGEventPost(kCGHIDEventTap, e);
+	e = CGEventCreateKeyboardEvent(None, 49, False);
 	CGEventPost(kCGHIDEventTap, e);
 
 # stores mouse position	
@@ -40,13 +54,26 @@ postMClickUpE(10, 10);
 
 # resets mouse position
 postMMoved(int(pos.x), int(pos.y));
+time.sleep(1);
 postMClickDownE(int(pos.x), int(pos.y));
+time.sleep(1);
 
 # key massakcer
+'''
 postKeyE(u'ü');
 postKeyE(u'l');
 postKeyE(u'f');
 postKeyE(u'e');
 postKeyE(u'!');
+'''
 
-## ? key shiftär??
+# opens spotlight
+postSearchSCE();
+# easy
+time.sleep(1);
+# types
+postKeyE(u'ü');
+postKeyE(u'l');
+postKeyE(u'f');
+postKeyE(u'e');
+postKeyE(u'!');
