@@ -62,10 +62,8 @@ case 0: return @"a";
         case 51: return @"DELETE";
         case 52: return @"ENTER";
         case 53: return @"ESCAPE";
-
             // some more missing codes abound, reserved I presume, but it would
             // have been helpful for Apple to have a document with them all listed
-
         case 65: return @".";
         case 67: return @"*";
         case 69: return @"+";
@@ -222,30 +220,36 @@ from Quartz.CoreGraphics import *
 def postMClickDownE(x, y):
 	e = CGEventCreateMouseEvent(None, kCGEventLeftMouseDown, (x, y), kCGMouseButtonLeft);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 
 def postMClickUpE(x, y):
 	e = CGEventCreateMouseEvent(None, kCGEventLeftMouseUp, (x, y), kCGMouseButtonLeft);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 
 def postMDragggedE(x, y):
 	e = CGEventCreateMouseEvent(None, kCGEventLeftMouseDragged, (x, y), kCGMouseButtonLeft);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 
-def postMMoved(x, y):
+def postMMovedE(x, y):
 	e = CGEventCreateMouseEvent(None, kCGEventMouseMoved, (x, y), kCGMouseButtonLeft);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
  	
 def postKeyE(key):
 	e = CGEventCreateKeyboardEvent(None, 0, True);
 	CGEventKeyboardSetUnicodeString(e, len(key), map(ord, key));
 	# CGEventSetFlags(e, kCGEventFlagMaskShift);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 
 def postKeycodeE(code):
 	e = CGEventCreateKeyboardEvent(None, code, True);	
 	CGEventPost(kCGHIDEventTap, e);
 	e = CGEventCreateKeyboardEvent(None, code, False);	
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 
 def postSearchSCE():
 	e = CGEventCreateKeyboardEvent(None, 49, True);
@@ -253,6 +257,7 @@ def postSearchSCE():
 	CGEventPost(kCGHIDEventTap, e);
 	e = CGEventCreateKeyboardEvent(None, 49, False);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 
 def postGoToFolderSCE():
 	e = CGEventCreateKeyboardEvent(None, 5, True);
@@ -260,56 +265,50 @@ def postGoToFolderSCE():
 	CGEventPost(kCGHIDEventTap, e);
 	e = CGEventCreateKeyboardEvent(None, 5, False);
 	CGEventPost(kCGHIDEventTap, e);
+	time.sleep(0.1);
 	
 # stores mouse position	
 e = CGEventCreate(None);
 pos = CGEventGetLocation(e);
 
 # wild wild click
-postMMoved(0, 2000);
-time.sleep(0.1);
+postMMovedE(0, 2000);
 postMClickDownE(0, 2000);
-time.sleep(0.1);
 postMClickUpE(0, 2000);
-time.sleep(0.1);
 
+time.sleep(1);
 # posts go to folder shortcut event
 postGoToFolderSCE();
-time.sleep(0.1);
 
 # easy 
 time.sleep(1);
 
 # types /Users/
 postKeyE(u'/');
-time.sleep(0.1);
 postKeyE(u'U');
-time.sleep(0.1);
 postKeyE(u's');
-time.sleep(0.1);
 postKeyE(u'e');
-time.sleep(0.1);
 postKeyE(u'r');
-time.sleep(0.1);
 postKeyE(u's');
-time.sleep(0.1);
 postKeyE(u'/');
-time.sleep(0.1);
 
 # enters [ENTER]
 postKeycodeE(52);
-time.sleep(0.1);
+
+# easy
+time.sleep(1);
 
 '''
-postMMoved(10, 10);
+postMMovedE(10, 10);
 postMClickDownE(10, 10);
 postMDragggedE(20, 20);
 postMClickUpE(10, 10);
 '''
 
 # resets mouse position
-postMMoved(int(pos.x), int(pos.y));
-# postMClickDownE(int(pos.x), int(pos.y));
+postMMovedE(pos.x, pos.y);
+
+# postMClickDownE(pos.x, pos.y);
 
 # opens spotlight
 '''
