@@ -67,18 +67,12 @@ case 0: return @"a";
             // have been helpful for Apple to have a document with them all listed
 
         case 65: return @".";
-
         case 67: return @"*";
-
         case 69: return @"+";
-
         case 71: return @"CLEAR";
-
         case 75: return @"/";
         case 76: return @"ENTER";   // numberpad on full kbd
-
         case 78: return @"-";
-
         case 81: return @"=";
         case 82: return @"0";
         case 83: return @"1";
@@ -88,27 +82,19 @@ case 0: return @"a";
         case 87: return @"5";
         case 88: return @"6";
         case 89: return @"7";
-
         case 91: return @"8";
         case 92: return @"9";
-
         case 96: return @"F5";
         case 97: return @"F6";
         case 98: return @"F7";
         case 99: return @"F3";
         case 100: return @"F8";
         case 101: return @"F9";
-
         case 103: return @"F11";
-
         case 105: return @"F13";
-
         case 107: return @"F14";
-
         case 109: return @"F10";
-
         case 111: return @"F12";
-
         case 113: return @"F15";
         case 114: return @"HELP";
         case 115: return @"HOME";
@@ -185,18 +171,12 @@ case 0: return @"a";
     // have been helpful for Apple to have a document with them all listed
 
     if ([keyString isEqualToString:@"."]) return 65;
-
     if ([keyString isEqualToString:@"*"]) return 67;
-
     if ([keyString isEqualToString:@"+"]) return 69;
-
     if ([keyString isEqualToString:@"CLEAR"]) return 71;
-
     if ([keyString isEqualToString:@"/"]) return 75;
     if ([keyString isEqualToString:@"ENTER"]) return 76;  // numberpad on full kbd
-
     if ([keyString isEqualToString:@"="]) return 78;
-
     if ([keyString isEqualToString:@"="]) return 81;
     if ([keyString isEqualToString:@"0"]) return 82;
     if ([keyString isEqualToString:@"1"]) return 83;
@@ -206,27 +186,19 @@ case 0: return @"a";
     if ([keyString isEqualToString:@"5"]) return 87;
     if ([keyString isEqualToString:@"6"]) return 88;
     if ([keyString isEqualToString:@"7"]) return 89;
-
     if ([keyString isEqualToString:@"8"]) return 91;
     if ([keyString isEqualToString:@"9"]) return 92;
-
     if ([keyString isEqualToString:@"F5"]) return 96;
     if ([keyString isEqualToString:@"F6"]) return 97;
     if ([keyString isEqualToString:@"F7"]) return 98;
     if ([keyString isEqualToString:@"F3"]) return 99;
     if ([keyString isEqualToString:@"F8"]) return 100;
     if ([keyString isEqualToString:@"F9"]) return 101;
-
     if ([keyString isEqualToString:@"F11"]) return 103;
-
     if ([keyString isEqualToString:@"F13"]) return 105;
-
     if ([keyString isEqualToString:@"F14"]) return 107;
-
     if ([keyString isEqualToString:@"F10"]) return 109;
-
     if ([keyString isEqualToString:@"F12"]) return 111;
-
     if ([keyString isEqualToString:@"F15"]) return 113;
     if ([keyString isEqualToString:@"HELP"]) return 114;
     if ([keyString isEqualToString:@"HOME"]) return 115;

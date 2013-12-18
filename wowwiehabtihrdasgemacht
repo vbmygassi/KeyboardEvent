@@ -1,0 +1,11 @@
+-- http://www.jwz.org/blog/2013/12/scripting-itunes-11-up-next/#comments
+tell application "iTunes"
+  set visible of browser window 1 to true
+  activate
+  tell application "System Events" to tell last splitter group of first window of application process "iTunes"
+    click (first button whose description is "shuffle")
+  end tell
+  set visible of browser window 1 to false
+end tell
+
+
