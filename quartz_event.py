@@ -42,9 +42,11 @@ postMClickUpE(10, 10);
 postMMoved(int(pos.x), int(pos.y));
 postMClickDownE(int(pos.x), int(pos.y));
 
-postKeyE(u'f');
-postKeyE(u'u');
-postKeyE(u'k');
-postKeyE(u'c');
+# key massakcer
 postKeyE(u'ü');
+postKeyE(u'l');
+postKeyE(u'f');
+postKeyE(u'e');
+postKeyE(u'!');
 
+## ? key shiftär??
