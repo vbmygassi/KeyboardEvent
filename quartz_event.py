@@ -58,15 +58,6 @@ time.sleep(1);
 postMClickDownE(int(pos.x), int(pos.y));
 time.sleep(1);
 
-# key massakcer
-'''
-postKeyE(u'ü');
-postKeyE(u'l');
-postKeyE(u'f');
-postKeyE(u'e');
-postKeyE(u'!');
-'''
-
 # opens spotlight
 postSearchSCE();
 # easy
@@ -77,3 +68,6 @@ postKeyE(u'l');
 postKeyE(u'f');
 postKeyE(u'e');
 postKeyE(u'!');
+time.sleep(1);
+# enters
+postKeycodeE(52);
